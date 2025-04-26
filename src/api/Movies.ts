@@ -13,3 +13,10 @@ export const getMovieDetails = async (id: string) => {
   })
   return response.data;
 }
+
+export const searchMovies = async (query: string) => {
+  const response = await tmdb.get('/search/movie', {
+    params: { query }
+  });
+  return response.data.results;
+};
